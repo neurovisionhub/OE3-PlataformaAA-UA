@@ -1,0 +1,124 @@
+.footer {
+  background-color: #3d3935;
+  margin-top: 36px;
+}
+p{
+  color: white;
+}
+ul {
+  list-style: none;
+  padding-left: 0px !important;
+}
+.h1,.h2,.h3,.h4,h1,h2,h3,h4 {
+  font-family: Barlow Condensed,sans-serif;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+.h5,h5 {
+  color: #fff;
+  /* font-family: Montserrat, sans-serif; */
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  line-height: 19px;
+  font-style: normal;
+}
+.r-social{
+  padding-bottom: 20px;
+}
+li a {
+  color: white;
+  text-decoration: none;
+
+}
+li img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+
+}
+li a:hover {
+  color: #da291c;
+}
+p a {
+  color: white;
+  text-decoration: none;
+
+}
+p a:hover {
+  color: #da291c;
+}
+.i-decoration{
+  color: #fff;
+  font-size: 25px;
+  text-decoration: none;
+  padding-left: 5px;
+}
+
+.container{
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: calc(var(--bs-gutter-x)* .5);
+  padding-right: calc(var(--bs-gutter-x)* .5);
+  width: 100%;
+}
+
+.row{
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: calc(var(--bs-gutter-x)* -.5);
+  margin-right: calc(var(--bs-gutter-x)* -.5);
+  margin-top: calc(var(--bs-gutter-y)* -1);
+}
+
+.p-0 {
+  padding: 0 !important;
+}
+
+.col-12 {
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+.footer__nav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  padding: 40px 0 0;
+}
+.footer__nav .nav-col.info {
+  max-width: 267px;
+}
+
+.footer__nav .nav-col {
+  margin: 0 20px;
+  max-width: 200px;
+  width: 100%;
+}
+
+.footer .footer-bottom {
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 40px;
+}
+
+.col-lg-6 {
+  flex: 0 0 auto;
+  width: 50%;
+}
+.footer .list-certificate {
+  border-bottom: 1px solid #b1b0ae;
+  border-top: 1px solid #b1b0ae;
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  padding: 32px 0;
+}
