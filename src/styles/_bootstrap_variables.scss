@@ -22,14 +22,14 @@ $gray-100: #f8f9fa !default;  //           $gray-100
 
 /* Reassign color vars to semantic color scheme */
 $blue:   #2B4E72 !default;
-$green:  #DB2A1D !default;
+$green:  #94BA65 !default;
 $cyan:   #006666 !default;
 $yellow: #ec9433 !default;
-$red:    #DB2A1D !default;
-$dark:   darken(rgb(51, 51, 51), 17%) !default;
+$red:    #CF4444 !default;
+$dark:   darken($blue, 17%) !default;
 
 $theme-colors: (
-        primary: $red,
+        primary: $blue,
         secondary: $gray-700,
         success: $green,
         info: $cyan,

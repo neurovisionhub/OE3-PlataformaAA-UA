@@ -74,11 +74,6 @@ export class ThumbnailComponent implements OnChanges {
     if (hasNoValue(this.thumbnail)) {
       return;
     }
-    if (!this.defaultImage){
-
-      this.setSrc('https://i.pinimg.com/474x/23/92/48/239248f49d3d0c9e940e46658a626559.jpg');
-      return;
-    }
 
     const src = this.contentHref;
     if (hasValue(src)) {

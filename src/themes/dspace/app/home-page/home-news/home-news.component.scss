@@ -7,9 +7,7 @@
     position: relative;
 
     .background-image > img {
-      background-color: white !important;
-      padding-left: 10%;
-      padding-right: 10%;
+      background-color: var(--bs-info);
       position: absolute;
       z-index: -1;
       top: 0;
@@ -23,9 +21,6 @@
     .container {
       position: relative;
       text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
-      width: 60%;
-      min-height: 400px !important;
-      margin-bottom: 10px !important;
 
       &:before, &:after {
         content: '';
@@ -37,13 +32,13 @@
       }
 
       &:before {
-        // background: linear-gradient(to left, var(--ds-banner-text-background), transparent);
+        background: linear-gradient(to left, var(--ds-banner-text-background), transparent);
         left: calc(-1 * var(--ds-banner-background-gradient-width));
 
       }
 
       &:after {
-        // background: linear-gradient(to right, var(--ds-banner-text-background), transparent);
+        background: linear-gradient(to right, var(--ds-banner-text-background), transparent);
         right: calc(-1 * var(--ds-banner-background-gradient-width));
       }
 
