@@ -60,7 +60,7 @@ export class ComcolPageBrowseByComponent implements OnInit {
           if (this.contentType === 'collection') {
             this.allOptions = [{
               id: this.id,
-              label: 'collection.page.browse.recent.headxx',
+              label: 'collection.page.browse.recent.head',
               routerLink: getCollectionPageRoute(this.id)
             }, ...this.allOptions];
           } else if (this.contentType === 'community') {

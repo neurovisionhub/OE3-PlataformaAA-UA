@@ -76,7 +76,7 @@ export class ThumbnailComponent implements OnChanges {
     }
     if (!this.defaultImage){
 
-      this.setSrc('https://i.pinimg.com/474x/23/92/48/239248f49d3d0c9e940e46658a626559.jpg');
+      this.setSrc('../../assets/images/pdf-icon.jpg');
       return;
     }
 
