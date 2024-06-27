@@ -1,0 +1,49 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title">{{ getHeader() }}</h5>
+  </div>
+  <div class="modal-body">
+
+    <div class="pt-2" [ngClass]="{'border border-danger': showErrorMessages}">
+      <div class="d-flex justify-content-between w-100">
+        <ds-form  #formRef="formComponent"
+                  class="flex-grow-1"
+                  [formId]="formId"
+                  [formModel]="formModel"
+                  [displaySubmit]="false"
+                  [displayCancel]="false"
+                  [emitChange]="false"
+                  (dfBlur)="onBlur($event)"
+                  (ngbEvent)="changeSecurity($event)"
+                  (dfFocus)="onFocus($event)"></ds-form>
+
+      </div>
+    </div>
+
+  </div>
+  <div class="modal-footer">
+    <div class="text-right space-children-mr">
+      <button type="button"
+              class="btn btn-outline-secondary"
+              (click)="closeModal()">
+        <span><i class="fa fa-times"></i> {{'form.group.close' | translate}}</span>
+      </button>
+      <button *ngIf="(canShowExternalSourceButton() | async)"
+              type="button"
+              class="btn btn-secondary"
+              ngbTooltip="{{'form.external.source.group-help' | translate}}"
+              [disabled]="!canImport()"
+              (click)="createEntityFromMetadata()">
+        <span><i class="far fa-share-square"></i> {{'form.external.source.group.btn' | translate}}</span>
+      </button>
+      <button *ngIf="!model.readOnly"
+              type="button"
+              class="btn btn-primary mr-2"
+              [disabled]="isMandatoryFieldEmpty()"
+              (click)="save()">
+        <span *ngIf="item"><i class="fas fa-save"></i> {{'form.group.set' | translate}}</span>
+        <span *ngIf="!item"><i class="fas fa-save"></i> {{'form.group.add' | translate}}</span>
+      </button>
+    </div>
+  </div>
+</div>

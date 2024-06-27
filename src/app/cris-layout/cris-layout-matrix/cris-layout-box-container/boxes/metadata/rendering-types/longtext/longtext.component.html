@@ -1,0 +1,9 @@
+<div class="mb-2">
+   <div class="{{field.styleValue}}">
+    <ds-truncatable [id]="truncableId">
+      <ds-truncatable-part [id]="truncableId" [minLines]="3">
+        <div [innerHTML]="formatText(metadataValue.value)" data-test="formatted-text"></div>
+      </ds-truncatable-part>
+    </ds-truncatable>
+  </div>
+</div>

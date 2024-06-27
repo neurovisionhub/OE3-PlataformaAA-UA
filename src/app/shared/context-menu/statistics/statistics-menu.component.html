@@ -1,0 +1,4 @@
+<button *ngIf="isAuthorized$ | async" class="btn btn-primary"
+        [innerHTML]="'context-menu.actions.statistics.btn' | translate"
+        [routerLink]="['/statistics/' + getPageRoutePrefix(), contextMenuObject.id]">
+</button>

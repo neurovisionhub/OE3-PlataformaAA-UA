@@ -1,0 +1,54 @@
+<div class="item-details-preview" *ngIf="item" @fadeInOut [ngClass]="{ 'mt-3 mb-3 pl-3' : viewConfig === 'relationship-sort-list'}">
+  <div class="top-header" *ngIf="viewConfig === 'relationship-sort-list'; else singleBadge">
+    <div class="drag-handle text-muted float-left pr-1" [class.invisible]="pendingChanges">
+      <i class="fas fa-grip-vertical fa-fw"></i>
+    </div>
+
+    <ds-type-badge [object]="item"></ds-type-badge>
+  </div>
+
+  <ng-template #singleBadge>
+    <ds-type-badge [object]="item"></ds-type-badge>
+  </ng-template>
+
+  <ds-truncatable [id]="item.id">
+    <h3 [innerHTML]="item.firstMetadataValue('dc.title') || ('mydspace.results.no-title' | translate)" [ngClass]="{'lead': true,'text-muted': !item.firstMetadataValue('dc.title')}"></h3>
+    <div>
+      <span class="text-muted">
+        <ds-truncatable-part [id]="item.id" [minLines]="1">
+          (<span *ngIf="item.hasMetadata('dc.publisher')" class="item-list-publisher"
+                 [innerHTML]="item.firstMetadataValue('dc.publisher') + ', '"></span>
+          <span class="item-list-date" [innerHTML]="item.firstMetadataValue('dc.date.issued') || ('mydspace.results.no-date' | translate)"></span>)
+          <ng-container *ngVar="['dc.contributor.author', 'dc.creator', 'dc.contributor.*'] as mdList">
+            <span *ngIf="item.hasMetadata(mdList);"
+                  class="item-list-authors">
+                <span *ngIf="item.allMetadata(mdList).length === 0">{{'mydspace.results.no-authors' | translate}}</span>
+                <span class="d-flex position-absolute w-100">
+                  <span class="metadata-content" *ngFor="let author of item.allMetadata(mdList); let i=index; let last=last;">
+                      <ds-metadata-link-view [item]="item" [metadata]="author" [metadataName]="mdList"></ds-metadata-link-view>
+                  </span>
+
+                </span>
+            </span>
+          </ng-container>
+
+        </ds-truncatable-part>
+      </span>
+
+      <ds-truncatable-part [id]="item.id" [minLines]="1" class="item-list-abstract">
+        <span [ngClass]="{'text-muted': !item.firstMetadataValue('dc.description.abstract')}"
+              [innerHTML]="(item.firstMetadataValue('dc.description.abstract')) || ('mydspace.results.no-abstract' | translate)"></span>
+      </ds-truncatable-part>
+
+    </div>
+  </ds-truncatable>
+  <ds-item-submitter *ngIf="showSubmitter" [object]="item"></ds-item-submitter>
+  <div *ngIf="viewConfig === 'relationship-sort-list'" class="d-flex justify-content-end mr-3">
+    <button class="btn btn-danger btn-sm"
+            [disabled]="processing || pendingChanges"
+            (click)="dispatchDelete()">
+      <span *ngIf="processing"><i class='fas fa-circle-notch fa-spin'></i> {{'loading.default' | translate}}</span>
+      <span *ngIf="!processing"> {{"manage.relationships.unselect" | translate}}</span>
+    </button>
+  </div>
+</div>
